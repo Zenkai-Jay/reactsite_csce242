@@ -1,0 +1,46 @@
+/* Header */
+#main-header img {
+  width: 300px;
+  height: 200px;
+}
+
+/* Nav */
+#main-nav {
+  position: absolute;
+  top: 5%;
+  right: 5%;
+}
+
+nav a {
+  margin-left: 20px;
+  text-decoration: none;
+  text-align: right;
+  color: black;
+}
+
+nav a:hover {
+  color: burlywood;
+}
+
+#signUp {
+  background: green;
+  padding-right: 20px;
+  border-radius: 60px;
+  display: inline-block;
+}
+
+#signUp a {
+  color: white;
+}
+
+#signUp a:hover {
+  color: burlywood;
+}
+
+nav ul {
+  padding-right: 5px;
+}
+
+nav li {
+  list-style-type: none;
+}

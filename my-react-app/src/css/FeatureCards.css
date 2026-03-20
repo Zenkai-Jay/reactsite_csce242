@@ -1,0 +1,32 @@
+.links {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  margin: 2rem auto;
+  padding: 1rem;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.card img {
+  width: 500px;
+  height: 650px;
+  padding-left: 10px;
+}
+
+.food-cards a {
+  text-decoration: none;
+  color: black;
+}
+
+.food-cards a:hover {
+  color: burlywood;
+}
+
+@media (min-width: 768px) {
+  .links {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+}
