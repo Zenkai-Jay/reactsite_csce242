@@ -1,0 +1,48 @@
+.links {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  padding: 1rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  width: 100%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+  transition: transform 0.2s ease;
+}
+
+.card:hover {
+  transform: scale(1.03);
+}
+
+.card img {
+  width: 100%;
+  height: 450px;
+  padding-right: 1000px;
+  object-fit: cover;
+  display: block;
+}
+
+.card-body {
+  padding: 1rem;
+}
+
+.card-body h3 {
+  margin-bottom: 0.75rem;
+}
+
+.card-body p {
+  line-height: 1.5;
+}
+
+@media (min-width: 768px) {
+  .links {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 2rem;
+  }
+}
