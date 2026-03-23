@@ -2,14 +2,14 @@
   display: grid;
   grid-template-columns: 1fr;
   gap: 1.5rem;
-  padding: 1rem;
+  padding: 2rem;
   width: 100%;
   box-sizing: border-box;
 }
 
 .card {
   background: white;
-  border-radius: 12px;
+  border-radius: 16px;
   overflow: hidden;
   width: 100%;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
@@ -22,10 +22,11 @@
 
 .card img {
   width: 100%;
-  height: 450px;
-  padding-right: 1000px;
+  height: 600px;
+  padding-right: 6000px;
   object-fit: cover;
   display: block;
+  
 }
 
 .card-body {
@@ -34,10 +35,18 @@
 
 .card-body h3 {
   margin-bottom: 0.75rem;
+  text-align: center;
+}
+
+.food-cards a {
+  text-decoration: none;
+  color: black;
+  text-align: center;
 }
 
 .card-body p {
   line-height: 1.5;
+  text-align: center;
 }
 
 @media (min-width: 768px) {
