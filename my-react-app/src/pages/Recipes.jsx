@@ -1,6 +1,7 @@
 import Hero3 from '../components/Hero3';
 import Header from '../components/Header';
 import RecipeCards from '../components/RecipeCards';
+import Footer from '../components/Footer';
 
 const Recipes = () => {
     return(
@@ -10,6 +11,8 @@ const Recipes = () => {
 
             <section>
                 <RecipeCards />
+
+                <Footer />
             </section>
         </div>
         

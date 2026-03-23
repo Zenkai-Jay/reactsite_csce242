@@ -40,7 +40,7 @@ const RecipeCards = () => {
 
 
                     <article className="card">
-                    <img src="image/Burger Sliders.png"/>
+                    <img src={BurgerSliders}/>
                     <div className="food-cards">
                     <h3><a href="#">Jay's Burger Sliders</a></h3>
                     <p>
@@ -53,7 +53,7 @@ const RecipeCards = () => {
                 </article>
 
                 <article className="card">
-                    <img src="image/Garlic Bread.png"/>
+                    <img src={GarlicBread}/>
                     <div className="food-cards">
                    <h3><a href="#">Jay's Chicken Alfredo Garlic Bread</a></h3>
                     <p>
@@ -66,7 +66,7 @@ const RecipeCards = () => {
                 </article>
 
                 <article className="card">
-                    <img src="image/Pizza Sliders.png"/>
+                    <img src={PizzaSliders}/>
                     <div className="food-cards">
                     <h3><a href="#">Emily's Pizza Sliders</a></h3>
                     <p>
