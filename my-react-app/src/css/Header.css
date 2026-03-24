@@ -22,6 +22,13 @@ nav a:hover {
   color: burlywood;
 }
 
+#toggle-nav {
+  display: block;
+  color: black;
+  text-decoration: none;
+  font-size: 2em;
+}
+
 #signUp {
   background: green;
   padding-right: 20px;
@@ -43,4 +50,46 @@ nav ul {
 
 nav li {
   list-style-type: none;
+}
+
+#main-nav .hide-small {
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  #main-nav {
+    position: static;
+    width: 100%;
+  }
+
+  #toggle-nav {
+    display: block;
+  }
+
+  nav ul {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  nav li {
+    text-align: center;
+  }
+
+  nav a {
+    padding: 12px 0;
+    border-bottom: 1px solid #eee;
+  }
+
+
+  #signUp {
+    display: block;
+    text-align: center;
+  }
+
+  #main-nav .hide-small {
+  display: flex;
+}
+
+
 }
