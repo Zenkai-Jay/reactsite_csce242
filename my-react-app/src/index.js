@@ -8,7 +8,7 @@ import Recipes from './pages/Recipes';
 
 export default function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={process.env.PUBLIC_URL}>
       <Routes>
         <Route index element={<Home />} />
         <Route path="about" element={<About />} />
