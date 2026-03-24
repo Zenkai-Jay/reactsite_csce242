@@ -8,8 +8,8 @@ const Footer = () => {
 
         <div className="footer-links">
           <a href="/">Home</a>
-          <a href="/about">About</a>
-          <a href="/recipes">Recipes</a>
+          <a href="about">About</a>
+          <a href="recipes">Recipes</a>
         </div>
 
         <p className="footer-copy">
