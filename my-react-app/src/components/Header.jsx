@@ -8,7 +8,8 @@ const Header = () => {
 
   const [menuOpen, setMenuOpen] = useState(false);
 
-  const toggleMenu = () => {
+  const toggleMenu = (e) => {
+    e.preventDefault();
     setMenuOpen(!menuOpen);
     console.log(menuOpen);
   };
@@ -22,8 +23,8 @@ const Header = () => {
         </a>
         <ul className={menuOpen ? "" : "hide-small"}>
            <li><Link to="/">Home</Link></li>
-          <li><Link to="about">About</Link></li>
-          <li><Link to="">Contact</Link></li>
+          <li><Link to="/about">About</Link></li>
+          <li><Link to="/contact">Contact</Link></li>
           <li id="signUp"><Link to="/">Sign Up</Link></li>
         </ul>
       </nav>

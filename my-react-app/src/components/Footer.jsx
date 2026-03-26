@@ -1,4 +1,5 @@
 import "../css/Footer.css";
+import { Link } from "react-router-dom";
 const Footer = () => {
     return (
         <footer id="main-footer">
@@ -7,9 +8,9 @@ const Footer = () => {
         <p>Sharing simple, flavorful recipes for everyone.</p>
 
         <div className="footer-links">
-          <a href="/">Home</a>
-          <a href="about">About</a>
-          <a href="recipes">Recipes</a>
+          <Link to="/">Home</Link>
+          <Link to="/about">About</Link>
+          <Link to="/recipes">Recipes</Link>
         </div>
 
         <p className="footer-copy">

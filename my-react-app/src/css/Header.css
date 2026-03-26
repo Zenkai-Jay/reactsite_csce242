@@ -6,32 +6,38 @@
 
 /* Nav */
 #main-nav {
-  position: absolute;
-  top: 5%;
-  right: 5%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0 16px;
+  
 }
 
 nav a {
-  margin-left: 20px;
+  /* remove left margin, spacing handled by ul */
   text-decoration: none;
-  text-align: right;
   color: black;
+  padding: 8px 12px;
+
 }
 
 nav a:hover {
   color: burlywood;
 }
 
+/* hide toggle on desktop */
 #toggle-nav {
-  display: block;
+  display: none;
   color: black;
   text-decoration: none;
-  font-size: 2em;
+  font-size: 1.8em;
+  cursor: pointer;
 }
 
 #signUp {
   background: green;
-  padding-right: 20px;
+  padding: 8px 20px;
   border-radius: 60px;
   display: inline-block;
 }
@@ -44,52 +50,69 @@ nav a:hover {
   color: burlywood;
 }
 
+/* horizontal list on desktop */
 nav ul {
-  padding-right: 5px;
+  display: flex;
+  gap: 450px;
+  margin: 0;
+  padding: 0;
+  align-items: center;
 }
 
 nav li {
   list-style-type: none;
 }
 
+/* show these items on desktop, hide on small screens */
 #main-nav .hide-small {
-  display: none;
+  display: flex;
+  align-items: center;
 }
 
 @media screen and (max-width: 768px) {
   #main-nav {
-    position: static;
     width: 100%;
+    padding: 8px 12px;
+    justify-content: space-between;
+        gap:1em;
   }
 
+  /* show toggle on mobile */
   #toggle-nav {
     display: block;
   }
 
+  /* hide the full list by default on mobile; toggled with .open */
   nav ul {
     display: none;
     flex-direction: column;
     width: 100%;
+    margin-top: 8px;
+    background: white;
+    border-top: 1px solid #eee;
+  }
+
+  nav ul.open {
+    display: flex;
   }
 
   nav li {
-    text-align: center;
+    width: 100%;
   }
 
   nav a {
-    padding: 12px 0;
+    padding: 12px 16px;
     border-bottom: 1px solid #eee;
   }
-
 
   #signUp {
     display: block;
     text-align: center;
+    margin: 8px 0;
   }
 
+  /* hide elements marked hide-small on small screens */
   #main-nav .hide-small {
-  display: flex;
-}
-
-
+    display: none;
+  }
 }

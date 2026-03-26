@@ -1,4 +1,5 @@
 import "../css/Hero.css";
+import { Link } from "react-router-dom";
 
 const Hero = () => {
   return (
@@ -7,7 +8,7 @@ const Hero = () => {
         <h1>Welcome To My Food Wrld!</h1>
         <p>Browse my collection of carefully curated recipes from my personal cookbook!</p>
         <h2 id="btn">
-          <a href="/recipes">Browse Recipes!</a>
+         <Link to="/recipes">Browse Recipes</Link>
         </h2>
       </div>
     </section>
