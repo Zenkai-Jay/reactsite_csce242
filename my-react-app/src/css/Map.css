@@ -1,0 +1,11 @@
+#map {
+    width:60%;
+    display:block;
+    height:300px;
+    margin: auto;
+}
+
+p{
+    text-align: center;
+    margin: 12px 0;
+}

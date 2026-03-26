@@ -10,7 +10,7 @@ const Contact = () => {
             <ContactForm />
             <div class="columns">
                 <div class="one">
-                    
+                    <Map />
                 </div>
 
             </div>

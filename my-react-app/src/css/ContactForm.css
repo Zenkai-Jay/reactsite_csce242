@@ -6,7 +6,8 @@ form.contact-form,
 form {
   max-width: 720px;
   padding: 20px;
-  background: #f9f9f9;
+  margin: auto;
+  background: bisque;
   border-radius: 10px;
   box-shadow: 0 6px 18px rgba(0,0,0,0.06);
   font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
