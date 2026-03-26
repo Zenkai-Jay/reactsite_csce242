@@ -1,10 +1,13 @@
 import Map from "../components/Map";
 import Header from "../components/Header";
+import ContactForm from "../components/ContactForm";
+import Footer from "../components/Footer";
 const Contact = () => {
     return(
         <main id="contact" className="main-contact">
             <Header />
-            <p>Contact us for more information</p>
+            
+            <ContactForm />
             <div class="columns">
                 <div class="one">
                     
@@ -12,7 +15,7 @@ const Contact = () => {
 
             </div>
 
-
+        <Footer />
         </main>
     )
 }

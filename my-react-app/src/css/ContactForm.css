@@ -1,0 +1,137 @@
+/* Contact Form - responsive, accessible styles
+   Targets form element and .contact-form wrapper
+*/
+
+form.contact-form,
+form {
+  max-width: 720px;
+  padding: 20px;
+  background: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  color: #222;
+  box-sizing: border-box;
+}
+
+h1{
+    text-align: center;
+}
+
+/* layout helpers */
+.form-row {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 14px;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+.form-row.full {
+  flex-direction: column;
+}
+
+/* inputs/textarea/select */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="url"],
+textarea,
+select {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #e3e3e3;
+  border-radius: 8px;
+  background: #fff;
+  font-size: 1rem;
+  box-sizing: border-box;
+  color: #111;
+  transition: border-color 120ms ease, box-shadow 120ms ease;
+}
+
+textarea {
+  min-height: 140px;
+  resize: vertical;
+  line-height: 1.45;
+}
+
+/* labels / helper text */
+label {
+  display: block;
+  font-size: 0.95rem;
+  margin-bottom: 6px;
+  color: #333;
+}
+.help {
+  font-size: 0.85rem;
+  color: #666;
+  margin-top: 6px;
+}
+
+/* focus & invalid */
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  border-color: #4f9cff;
+  box-shadow: 0 0 0 4px rgba(79,156,255,0.10);
+}
+.invalid {
+  border-color: #d32f2f;
+  box-shadow: 0 0 0 4px rgba(211,47,47,0.06);
+}
+
+/* result messages */
+.form-result {
+  display: block;
+  margin-top: 10px;
+  font-size: 0.95rem;
+}
+.form-result.success { color: #0a7a3a; }
+.form-result.error { color: #b00020; }
+
+/* actions */
+.form-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+  margin-top: 8px;
+  flex-wrap: wrap;
+}
+button[type="submit"] {
+  background: linear-gradient(180deg,#1976d2,#1565c0);
+  color: #fff;
+  border: none;
+  padding: 10px 18px;
+  font-size: 1rem;
+  border-radius: 999px;
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(21,101,192,0.18);
+  transition: transform 120ms ease, opacity 120ms ease;
+}
+button[type="submit"]:hover { transform: translateY(-2px); opacity: 0.98; }
+button[disabled] { opacity: 0.6; cursor: not-allowed; transform: none; box-shadow: none; }
+
+.btn-ghost {
+  background: transparent;
+  color: #333;
+  border: 1px solid #e0e0e0;
+  padding: 9px 14px;
+  border-radius: 8px;
+}
+
+/* responsive */
+@media (min-width: 640px) {
+  .col-2 { flex: 1 1 calc(50% - 8px); min-width: 180px; }
+}
+@media (max-width: 639px) {
+  form.contact-form,
+  form {
+    padding: 16px;
+    margin: 12px;
+  }
+  .form-actions { justify-content: stretch; }
+  button[type="submit"], .btn-ghost { width: 100%; }
+}
+
+/* utility */
+.spacer { height: 12px; }
