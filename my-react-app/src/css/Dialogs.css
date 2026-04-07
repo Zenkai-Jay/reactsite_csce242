@@ -1,0 +1,76 @@
+
+
+#dialog-section {
+  position: relative;
+}
+
+#food-dialog,
+#add-dialog,
+#edit-dialog,
+#delete-dialog {
+  display: block;
+}
+
+#delete-content {
+  margin-bottom: 10px;
+}
+
+#dialog-content {
+  margin-left:10px;
+}
+
+#dialog-content h3 {
+  color:#355EA6 !important;
+}
+
+#img-prev {
+  max-width: 100%;
+}
+
+#delete-dialog button {
+  margin-right: 10px;
+}
+
+.w3-container h3 {
+  color:#295095;
+}
+
+.w3-container form {
+  padding:10px;
+}
+
+.w3-container form p {
+  display:flex;
+}
+
+.w3-container form label {
+  display:block;
+  width:120px;
+}
+
+.w3-container form input:not([type="file"]) {
+  display:block;
+  background:rgba(100,149,237,0.2);
+}
+
+#delete-content {
+  padding:10px;
+}
+
+#delete-content button {
+  margin-right:10px;
+}
+
+@media only screen and (min-width: 600px) {
+  #img-prev {
+    max-width:30%;
+  }
+
+  #img-prev-section {
+    flex: 1;
+  }
+
+  #img-upload {
+    flex: 6;
+  }
+}

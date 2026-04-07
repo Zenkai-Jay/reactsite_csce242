@@ -2,12 +2,10 @@ import "../css/Hero2.css";
 
 const Hero2 = () => {
   return (
-     <section class="hero">
-                <div class="hero-text">
+     <section className="hero">
+                <div className="hero-text">
                     <h1>Browse Recipes!</h1>
-                    <p>
-                        <h2 id="btn3"><a href="saved.html">Your Saved Recipes</a></h2>
-                    </p>
+                    <h2 id="btn3"><a href="saved.html">Your Saved Recipes</a></h2>
                 </div>
             </section>
   )

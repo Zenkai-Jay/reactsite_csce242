@@ -1,0 +1,86 @@
+/* Recipe card styles for .food (used inside Link) */
+
+.food {
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  transition: transform 160ms ease, box-shadow 160ms ease;
+  text-decoration: none;
+  color: inherit;
+  min-height: 260px;
+  width: 100%;
+}
+
+.food img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  background: #f3f3f3;
+}
+
+/* description area */
+.food-description {
+  padding: 12px 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  flex: 1 1 auto;
+}
+
+.food-description h3 {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #1f2937;
+  line-height: 1.2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* subtle hover/focus */
+a:hover .food,
+a:focus .food,
+.food:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 30px rgba(0,0,0,0.12);
+}
+
+/* accessible focus ring on link */
+a:focus { outline: none; }
+a:focus .food {
+  box-shadow: 0 0 0 4px rgba(79,156,255,0.14), 0 6px 18px rgba(0,0,0,0.06);
+}
+
+/* responsive tweaks */
+@media (max-width: 520px) {
+  .food img { height: 140px; }
+  .food-description h3 {
+    font-size: 0.98rem;
+    white-space: normal;
+    overflow: hidden;
+  }
+}
+
+/* grid container for columns (use this on the parent that renders many RecipeCard components) */
+.recipes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 16px;
+  padding: 12px;
+  align-items: start;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* optional: make images cover equal height for nicer grid alignment */
+.recipe-image--cover {
+  height: 160px;
+  object-fit: cover;
+}
