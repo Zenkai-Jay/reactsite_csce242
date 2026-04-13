@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import"../css/Foods.css";
 import FoodsDialog from "./FoodsDetailedDialog";
-import AddFood from "../components/AddFood";
+
 
 const Foods = (props) => {
     const [foods, setFoods] = useState([]);
@@ -26,15 +26,10 @@ const Foods = (props) => {
         setFoods((foods) => [...foods, food]);
     };
 
-    useEffect(() =>{
-        const loadFoods = async () => {
-            const renderLink = "https://demo-backend-niit.onrender.com/api/foods";
-            const response = await axios.get(renderLink);
-            setFoods(response.data);
-    };
+
 
     loadFoods();
-}, [])
+}, []
 
     return (
         <>

@@ -16,12 +16,13 @@ const AddFood = (props) => {
         console.log(...formData);
 
         const postURLRender = "https://demo-backend-niit.onrender.com/api/foods";
-        const response = await fetch(postURLRender, {
+        const postLocal = "http://localhost:3001/api/foods";
+        const response = await fetch(postLocal, {
             method: "POST",
             "body": formData
         });
 
-        if(response.status === 200){
+        if(response.status === 201){
             setResult("Food added successfully!");
             props.closeAddDialog();
             props.addFoodToList(await response.json());
