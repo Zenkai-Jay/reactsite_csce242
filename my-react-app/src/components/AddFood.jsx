@@ -47,8 +47,8 @@ const AddFood = (props) => {
                             <h3>Add Food</h3>
 
                             <p>
-                                <label htmlFor="name">Food Name:</label>
-                                <input type="text" id="name" name="name" required></input>
+                                <label htmlFor="title">Food Title:</label>
+                                <input type="text" id="title" name="title" required></input>
                             </p>
 
                             <p>
@@ -57,8 +57,8 @@ const AddFood = (props) => {
                             </p>
 
                             <p>
-                                <label htmlFor="prep">Food Preparation:</label>
-                                <input type="number" id="prep" name="prep" required></input>
+                                <label htmlFor="prep_time">Food Prep Time:</label>
+                                <input type="number" id="prep_time" name="prep_time" required></input>
 
                             </p>
 
@@ -78,8 +78,8 @@ const AddFood = (props) => {
                                 </p>
 
                                 <p>
-                                    <label htmlFor="image">Food Image:</label>
-                                    <input type="file" id="image" name="image" accept="image/*" onChange={uploadImage}></input>
+                                    <label htmlFor="img">Food Image:</label>
+                                    <input type="file" id="img" name="img" accept="img/*" onChange={uploadImage}></input>
                                 </p>
                             </section>
                             <p>
