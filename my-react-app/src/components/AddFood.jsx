@@ -58,7 +58,7 @@ const AddFood = (props) => {
 
                             <p>
                                 <label htmlFor="prep_time">Food Prep Time:</label>
-                                <input type="number" id="prep_time" name="prep_time" required></input>
+                                <input type="text" id="prep_time" name="prep_time" required></input>
 
                             </p>
 
