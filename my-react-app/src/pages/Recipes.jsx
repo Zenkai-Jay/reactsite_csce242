@@ -52,6 +52,7 @@ const Recipes = () => {
       <div id="foods" className="columns">
   {recipes.map((recipe) => (
    <RecipeCard
+    key={recipe._id}
      _id={recipe._id}
      title={recipe.title}
      img_name={recipe.img_name}

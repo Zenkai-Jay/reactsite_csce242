@@ -48,7 +48,7 @@ const AddFood = (props) => {
 
                             <p>
                                 <label htmlFor="title">Food Title:</label>
-                                <input type="text" id="title" name="title" required></input>
+                                <input type="text" id="title" name="title" min = "3" required></input>
                             </p>
 
                             <p>
@@ -69,7 +69,7 @@ const AddFood = (props) => {
 
                             <p>
                                 <label htmlFor="description">Food Description:</label>
-                                <textarea id="description" name="description" required></textarea>
+                                <textarea id="description" name="description" min = "10" max = "500"required></textarea>
                             </p>
 
                             <section>
