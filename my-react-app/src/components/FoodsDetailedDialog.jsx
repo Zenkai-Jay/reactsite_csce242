@@ -13,7 +13,6 @@ const FoodsDetailedDialog = (props) => {
 
                 <div id="foods-dialog-content">
                   <div className="columns">
-                    <img src={`https://demo-backend-niit.onrender.com/image/${props.img_name}`} />
                     <div id="dialog-content">
                       <h3>{props.title}</h3>
                       <p>{props.category}</p>

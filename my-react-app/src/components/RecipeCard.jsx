@@ -16,7 +16,7 @@ const RecipeCard = (props) => {
   return (
     <section className="food">
       <img
-        src={`http://localhost:3001/${props.img_name}`}
+        src={`https://demo-backend-niit.onrender.com/${props.img_name}`}
         alt="recipe"
         onClick={openDialog}
       />

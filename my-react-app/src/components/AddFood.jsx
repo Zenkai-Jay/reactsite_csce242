@@ -13,14 +13,18 @@ const AddFood = (props) => {
         setResult("Adding....");
 
         const formData = new FormData(e.target);
-        console.log(...formData);
+       console.log([...formData.entries()]);
 
         const postURLRender = "https://demo-backend-niit.onrender.com/api/foods";
         const postLocal = "http://localhost:3001/api/foods";
         const response = await fetch(postURLRender, {
             method: "POST",
-            "body": formData
+            body: formData
         });
+
+if (!response.ok) {
+  console.log(await response.text());
+}
 
         if(response.status === 201){
             setResult("Food added successfully!");
@@ -74,7 +78,7 @@ const AddFood = (props) => {
 
                             <section>
                                 <p id="img-prev-section">
-                                    {prevSrc==""? (""):(<img id="img-prev" src={prevSrc}/>)}
+                                    {prevSrc === "" ? ("") : (<img id="img-prev" src={prevSrc} />)}
                                 </p>
 
                                 <p>
