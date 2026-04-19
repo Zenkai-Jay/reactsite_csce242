@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/reactsite_csce242/static/css/main.ad05524c.css",
-    "main.js": "/reactsite_csce242/static/js/main.35571aeb.js",
+    "main.css": "/reactsite_csce242/static/css/main.1283b736.css",
+    "main.js": "/reactsite_csce242/static/js/main.1a833ba8.js",
     "static/media/Garlic Bread.png": "/reactsite_csce242/static/media/Garlic Bread.11ba15b83fa2283789a2.png",
     "static/media/Burger Sliders.png": "/reactsite_csce242/static/media/Burger Sliders.9fc96cbd0bc61f3e34c1.png",
     "static/media/Create.png": "/reactsite_csce242/static/media/Create.b899e020c9d527f162aa.png",
@@ -14,11 +14,11 @@
     "static/media/EmilyStack.JPG": "/reactsite_csce242/static/media/EmilyStack.81b9c2e7c1217c805f76.JPG",
     "static/media/AboutMePhoto.jpg": "/reactsite_csce242/static/media/AboutMePhoto.a5dc45e3b3d5fe122f11.jpg",
     "index.html": "/reactsite_csce242/index.html",
-    "main.ad05524c.css.map": "/reactsite_csce242/static/css/main.ad05524c.css.map",
-    "main.35571aeb.js.map": "/reactsite_csce242/static/js/main.35571aeb.js.map"
+    "main.1283b736.css.map": "/reactsite_csce242/static/css/main.1283b736.css.map",
+    "main.1a833ba8.js.map": "/reactsite_csce242/static/js/main.1a833ba8.js.map"
   },
   "entrypoints": [
-    "static/css/main.ad05524c.css",
-    "static/js/main.35571aeb.js"
+    "static/css/main.1283b736.css",
+    "static/js/main.1a833ba8.js"
   ]
 }
