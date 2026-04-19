@@ -29,30 +29,36 @@ const EditDialog = (props) => {
     setResult("Sending...");
 
     const formData = new FormData();
-    console.log("Submitting with inputs:" + props._id);
     formData.append("title", inputs.title);
     formData.append("category", inputs.category);
     formData.append("prep_time", inputs.prep_time);
     formData.append("servings", inputs.servings);
     formData.append("description", inputs.description);
 
-if (inputs.img_name instanceof File) {
-  formData.append("img_name", inputs.img_name);
-}
-    console.log(props._id);
-    const response = await fetch(`http://localhost:3001/api/foods/${props._id}`, {
-      method: "PUT",
-      body: formData,
-    });
+    if (inputs.img_name instanceof File) {
+      formData.append("img_name", inputs.img_name);
+    }
 
-    if (response.ok) {
-      setResult("Success! Food Updated!");
-      props.editFood(await response.json());
-      props.closeDialog();
-    } else {
-      const text = await response.text();
-      console.log("Error updating food:", text);
-      setResult(text);
+    try {
+      const response = await fetch(`http://localhost:3001/api/foods/${props._id}`, {
+        method: "PUT",
+        body: formData,
+      });
+
+      if (response.ok) {
+        const updatedFood = await response.json();
+        setResult("Success! Food Updated!");
+        props.editFood(updatedFood);
+        props.onEdit(updatedFood);
+        props.closeDialog();
+      } else {
+        const text = await response.text();
+        console.log("Error updating food:", text);
+        setResult(text);
+      }
+    } catch (error) {
+      console.error("Update request failed:", error);
+      setResult("Update request failed.");
     }
   };
 
@@ -149,6 +155,8 @@ if (inputs.img_name instanceof File) {
 
             <button type="submit">Save Changes</button>
           </form>
+
+          <span>{result}</span>
         </div>
       </div>
     </div>

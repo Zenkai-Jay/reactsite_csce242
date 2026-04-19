@@ -1,14 +1,12 @@
 import "../css/Dialogs.css";
-import React, {useState}  from "react";
+import React, { useState } from "react";
 import EditDialog from "./Edit-Dialog";
 import DeleteDialog from "./Delete-Dialog";
 
 const FoodsDetailedDialog = (props) => {
   const [showEditDialog, setShowEditDialog] = useState(false);
   const [showDeleteDialog, setShowDeleteDialog] = useState(false);
-  const [showFood, setShowFood] = useState(true);
-  const [Food, setFood] = useState(props);
-
+  const [food, setFood] = useState(props);
 
   const openEditDialog = () => {
     setShowEditDialog(true);
@@ -30,67 +28,70 @@ const FoodsDetailedDialog = (props) => {
     setFood(updatedFood);
   };
 
-  const hideFood = (updatedFood) => {
-    setShowFood(false); 
-  };
-
   return (
-    <>
-    {showFood ? ( 
     <div id="food-dialog" className="w3-modal">
-        <div className="w3-modal-content">
-            <div className="w3-container">
-                <span id="dialog-close" className="w3-button w3-display-topright" onClick={props.closeFoodsDialog}>
-                    &times;
-                </span>
-                {showDeleteDialog ? (<DeleteDialog  closeDialog={closeDeleteDialog} title={props.title}  _id={props._id} hideFood={hideFood}/>) : ("")}
-               {showEditDialog ? (
-               <EditDialog 
-               closeDialog={closeEditDialog} 
-               editFood={editFood} 
-                _id={props._id}
-                title={props.title}
-                img_name={props.img_name}
-                category={props.category}
-                prep_time={props.prep_time}
-                servings={props.servings}
-                description={props.description}
-               /> 
-               ) : (
-               ""
-               )}
+      <div className="w3-modal-content">
+        <div className="w3-container">
+          <span
+            id="dialog-close"
+            className="w3-button w3-display-topright"
+            onClick={props.closeFoodsDialog}
+          >
+            &times;
+          </span>
 
-                <section className="info">
-                  <header className="columns">
-                    <section id="change-buttons">
-                      <a href="#onEdit" onClick={openEditDialog}>
-                        &#9998;
-                      </a>
-                      <a href="#onDelete" onClick={openDeleteDialog}>
-                        &#x2715;
-                      </a>
-                    </section>
+          {showDeleteDialog ? (
+            <DeleteDialog
+              closeDialog={closeDeleteDialog}
+              closeFoodsDialog={props.closeFoodsDialog}
+              title={food.title}
+              _id={food._id}
+              onDelete={props.onDelete}
+            />
+          ) : null}
 
-                  </header>
+          {showEditDialog ? (
+            <EditDialog
+              closeDialog={closeEditDialog}
+              editFood={editFood}
+              onEdit={props.onEdit}
+              _id={food._id}
+              title={food.title}
+              img_name={food.img_name}
+              category={food.category}
+              prep_time={food.prep_time}
+              servings={food.servings}
+              description={food.description}
+            />
+          ) : null}
 
-                </section>
+          <section className="info">
+            <header className="columns">
+              <section id="change-buttons">
+                <button type="button" onClick={openEditDialog}>
+                  &#9998;
+                </button>
+                <button type="button" onClick={openDeleteDialog}>
+                  &#x2715;
+                </button>
+              </section>
+            </header>
+          </section>
 
-                <div id="foods-dialog-content">
-                  <div className="columns">
-                    <div id="dialog-content">
-                      <h3>{props.title}</h3>
-                      <p>{props.category}</p>
-                      <p>{props.prep_time}</p>
-                      <p>{props.servings}</p>
-                      <p>{props.description}</p>
-                    </div>
-                  </div>
-                </div>
+          <div id="foods-dialog-content">
+            <div className="columns">
+              <div id="dialog-content">
+                <h3>{food.title}</h3>
+                <p>{food.category}</p>
+                <p>{food.prep_time}</p>
+                <p>{food.servings}</p>
+                <p>{food.description}</p>
+              </div>
             </div>
+          </div>
         </div>
+      </div>
     </div>
-    ) : ("")}
-   </>
   );
 };
 
