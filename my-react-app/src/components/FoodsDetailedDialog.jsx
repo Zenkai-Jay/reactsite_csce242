@@ -1,9 +1,12 @@
 import "../css/Dialogs.css";
 import React, {useState}  from "react";
 import EditDialog from "./Edit-Dialog";
+import DeleteDialog from "./Delete-Dialog";
 
 const FoodsDetailedDialog = (props) => {
   const [showEditDialog, setShowEditDialog] = useState(false);
+  const [showDeleteDialog, setShowDeleteDialog] = useState(false);
+  const [showFood, setShowFood] = useState(true);
   const [Food, setFood] = useState(props);
 
 
@@ -15,23 +18,36 @@ const FoodsDetailedDialog = (props) => {
     setShowEditDialog(false);
   };
 
+  const openDeleteDialog = () => {
+    setShowDeleteDialog(true);
+  };
+
+  const closeDeleteDialog = () => {
+    setShowDeleteDialog(false);
+  };
+
   const editFood = (updatedFood) => {
     setFood(updatedFood);
   };
 
-  return (
+  const hideFood = (updatedFood) => {
+    setShowFood(false); 
+  };
 
+  return (
+    <>
+    {showFood ? ( 
     <div id="food-dialog" className="w3-modal">
         <div className="w3-modal-content">
             <div className="w3-container">
                 <span id="dialog-close" className="w3-button w3-display-topright" onClick={props.closeFoodsDialog}>
                     &times;
                 </span>
-
+                {showDeleteDialog ? (<DeleteDialog  closeDialog={closeDeleteDialog} title={props.title}  _id={props._id} hideFood={hideFood}/>) : ("")}
                {showEditDialog ? (
                <EditDialog 
                closeDialog={closeEditDialog} 
-               editFood={editFood}
+               editFood={editFood} 
                 _id={props._id}
                 title={props.title}
                 img_name={props.img_name}
@@ -50,7 +66,7 @@ const FoodsDetailedDialog = (props) => {
                       <a href="#onEdit" onClick={openEditDialog}>
                         &#9998;
                       </a>
-                      <a href="#">
+                      <a href="#onDelete" onClick={openDeleteDialog}>
                         &#x2715;
                       </a>
                     </section>
@@ -73,7 +89,8 @@ const FoodsDetailedDialog = (props) => {
             </div>
         </div>
     </div>
-  
+    ) : ("")}
+   </>
   );
 };
 
