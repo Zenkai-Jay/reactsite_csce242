@@ -61,6 +61,17 @@
   margin-right:10px;
 }
 
+#change-buttons {
+  margin-top: 10px;
+  margin-left: 20px;
+}
+
+#change-buttons a {
+  text-decoration: none;
+  font-size: 1.5em;
+  margin-right: 20px;
+}
+
 @media only screen and (min-width: 600px) {
   #img-prev {
     max-width:30%;
