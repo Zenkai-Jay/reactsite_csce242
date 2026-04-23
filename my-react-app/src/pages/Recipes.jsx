@@ -37,7 +37,7 @@ const Recipes = () => {
 
   useEffect(() => {
     const loadRecipes = async () => {
-      const response = await axios.get("http://localhost:3001/api/foods");
+      const response = await axios.get("https://demo-backend-niit.onrender.com/api/foods");
       setRecipes(response.data);
     };
 

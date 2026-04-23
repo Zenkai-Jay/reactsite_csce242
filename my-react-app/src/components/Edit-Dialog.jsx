@@ -12,7 +12,7 @@ const EditDialog = (props) => {
 
   const [selectedImage, setSelectedImage] = useState(null);
   const [previewSrc, setPreviewSrc] = useState(
-    props.img_name ? `http://localhost:3001/${props.img_name}` : ""
+    props.img_name ? `https://demo-backend-niit.onrender.com/${props.img_name}` : ""
   );
   const [result, setResult] = useState("");
 
@@ -45,7 +45,7 @@ const EditDialog = (props) => {
     }
 
     try {
-      const response = await fetch(`http://localhost:3001/api/foods/${props._id}`, {
+      const response = await fetch(`https://demo-backend-niit.onrender.com/api/foods/${props._id}`, {
         method: "PUT",
         body: formData,
       });
