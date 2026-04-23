@@ -17,7 +17,7 @@ const AddFood = (props) => {
 
         const postURLRender = "https://demo-backend-niit.onrender.com/api/foods";
         const postLocal = "http://localhost:3001/api/foods";
-        const response = await fetch(postURLRender, {
+        const response = await fetch(postLocal, {
             method: "POST",
             body: formData
         });

@@ -3,15 +3,17 @@ import React, { useState } from "react";
 
 const EditDialog = (props) => {
   const [inputs, setInputs] = useState({
-    _id: props._id,
     title: props.title,
-    img_name: props.img_name,
     category: props.category,
     prep_time: props.prep_time,
     servings: props.servings,
     description: props.description,
   });
 
+  const [selectedImage, setSelectedImage] = useState(null);
+  const [previewSrc, setPreviewSrc] = useState(
+    props.img_name ? `http://localhost:3001/${props.img_name}` : ""
+  );
   const [result, setResult] = useState("");
 
   const handleChange = (event) => {
@@ -21,7 +23,10 @@ const EditDialog = (props) => {
 
   const handleImageChange = (event) => {
     const file = event.target.files[0];
-    setInputs((values) => ({ ...values, img_name: file }));
+    if (file) {
+      setSelectedImage(file);
+      setPreviewSrc(URL.createObjectURL(file));
+    }
   };
 
   const onSubmit = async (event) => {
@@ -35,8 +40,8 @@ const EditDialog = (props) => {
     formData.append("servings", inputs.servings);
     formData.append("description", inputs.description);
 
-    if (inputs.img_name instanceof File) {
-      formData.append("img_name", inputs.img_name);
+    if (selectedImage) {
+      formData.append("img", selectedImage);
     }
 
     try {
@@ -53,7 +58,6 @@ const EditDialog = (props) => {
         props.closeDialog();
       } else {
         const text = await response.text();
-        console.log("Error updating food:", text);
         setResult(text);
       }
     } catch (error) {
@@ -61,13 +65,6 @@ const EditDialog = (props) => {
       setResult("Update request failed.");
     }
   };
-
-  const previewSrc =
-    inputs.img_name instanceof File
-      ? URL.createObjectURL(inputs.img_name)
-      : inputs.img_name
-      ? `http://localhost:3001/${inputs.img_name}`
-      : "";
 
   return (
     <div id="edit-dialog" className="w3-modal">
@@ -104,7 +101,7 @@ const EditDialog = (props) => {
               <input
                 type="file"
                 id="img_name"
-                name="img_name"
+                name="img"
                 onChange={handleImageChange}
                 accept="image/*"
               />
